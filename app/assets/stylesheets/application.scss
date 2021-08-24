@@ -11,3 +11,8 @@
 // Your CSS partials
 @import "components/index";
 @import "pages/index";
+
+// CSS for the footer 
+.min-height{
+  min-height: calc(100vh - 166px);
+}
