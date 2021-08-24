@@ -7,6 +7,21 @@ class PetsController < ApplicationController
     @pet = Pet.find(params[:id])
   end
 
+  def edit
+    @pet = Pet.find(params[:id])
+  end
+
+  def update
+    @pet = Pet.find(params[:id])
+    if @pet.update(pet_params)
+      flash[:notice] = "Pet listing updated!"
+      redirect_to pet_path(@pet)
+    else
+      raise
+      render :new
+    end
+  end
+
   def new
     @pet = Pet.new
   end

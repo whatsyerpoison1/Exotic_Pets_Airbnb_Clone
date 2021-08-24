@@ -7,7 +7,7 @@
         <%= simple_form_for [@pet, @booking] do |f| %>
           <%= f.input :start_date, placeholder: 'Start date' %>
           <%= f.input :end_date, placeholder: 'End date' %>
-          <%= link_to "submit", pet_booking_path(@pet.id, @booking.id), f.submit class: 'btn btn-flat' %>
+          <%= f.submit class: 'btn btn-success' %>
         <% end %>
       </div>
     </div>
