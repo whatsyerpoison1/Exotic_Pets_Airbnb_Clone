@@ -1,9 +1,16 @@
-<h1>Hello</h1>
 <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1612975631838-719497229ee4?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1500&q=80);">
   <div class="container">
     <h1>Welcome to  <strong>Petxotic</strong> a world of <strong>Exotic Animals</strong>!</h1>
     <p>Find an Exotic pet today.</p>
-    <a class="btn btn-danger" href="#">Explore</a>
-        <%= link_to 'Create a pet', new_pet_path, class: 'btn btn-flat' %>
+    <%= simple_form_for :search, url: root_path, method: :get do |f| %>
+      <div class="search-form-control form-group">
+        <input class="form-control string required" type="text" name="search[query]" id="search_query" placeholder="Search an exotic pet...." />
+        <br>
+        <button name="button" type="submit" class="btn btn-primary">
+          <i class="fas fa-search"></i> Explore
+        </button>
+      </div>
+    <% end %>
+        <%= link_to 'Create a pet listing', new_pet_path, class: 'btn btn-success' %>
   </div>
 </div>
