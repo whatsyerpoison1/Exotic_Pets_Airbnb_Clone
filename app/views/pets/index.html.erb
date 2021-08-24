@@ -13,11 +13,9 @@
   <div class="row">
     <% @pets.each do |pet| %>
       <div class="co-12 colsm-6 col-md-4 mb-3">
-        <%= link_to pet_path(pet), class:'text-decoration-none' #do %>
-          <div class="card-category" data-aos="zoom-in" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%=# pet.photo.attached? ? cl_image_path(pet.photo.key) : asset_path('pet_background.jpg') %>)">
+        <%= link_to pet_path(pet), class:'text-decoration-none' %>
             <%= pet.name %>
           </div>
-        <% #end %>
       </div>
     <% end %>
   </div>
