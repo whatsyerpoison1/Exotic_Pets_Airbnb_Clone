@@ -6,4 +6,10 @@
 <br>
 <%= @pet.description %>
 <br>
+<% if current_user != @pet.user %>
 <%= link_to "Book me!", new_pet_booking_path(@pet.id) %>
+<% else %>
+<%= link_to 'Update listing', edit_pet_path(@pet.id) %>
+<br>
+<%= link_to 'Delete listing', pet_path(@pet.id), method: 'delete' %>
+<% end %>

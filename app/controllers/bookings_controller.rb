@@ -2,6 +2,10 @@ class BookingsController < ApplicationController
   before_action :set_booking, only: :destroy
   before_action :set_pet, only: [:new, :create]
 
+  def show
+    @booking = Booking.find(params[:id])
+  end
+
   def new
     @booking = Booking.new
   end
@@ -11,7 +15,7 @@ class BookingsController < ApplicationController
     @booking.pet = @pet
     @booking.user = current_user
     flash[:notice] = @booking.errors.full_messages.to_sentence unless @booking.save
-    redirect_to pet_booking_path(@pet.id, @booking.id)
+    redirect_to pet_booking_path(@pet, @booking)
   end
 
   def destroy
