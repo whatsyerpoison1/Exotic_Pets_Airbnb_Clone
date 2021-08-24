@@ -17,7 +17,6 @@ class PetsController < ApplicationController
     if @pet.save
       redirect_to pet_path(@pet)
     else
-      raise
       render :new
     end
   end
