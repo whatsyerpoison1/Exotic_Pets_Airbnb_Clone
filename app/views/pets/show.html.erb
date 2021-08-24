@@ -5,3 +5,5 @@
 <%= @pet.species %>
 <br>
 <%= @pet.description %>
+<br>
+<%= link_to "Book me!", new_pet_booking_path(@pet.id) %>

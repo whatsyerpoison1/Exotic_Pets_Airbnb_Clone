@@ -9,8 +9,9 @@ class BookingsController < ApplicationController
   def create
     @booking = Booking.new(booking_params)
     @booking.pet = @pet
+    @booking.user = current_user
     flash[:notice] = @booking.errors.full_messages.to_sentence unless @booking.save
-    redirect_to pet_path(@pet)
+    redirect_to pet_booking_path(@pet.id, @booking.id)
   end
 
   def destroy
