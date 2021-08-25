@@ -19,7 +19,6 @@ class PetsController < ApplicationController
       flash[:notice] = "Pet listing updated!"
       redirect_to pet_path(@pet)
     else
-      raise
       render :new
     end
   end
@@ -29,7 +28,6 @@ class PetsController < ApplicationController
   end
 
   def create
-    raise
     @pet = Pet.new(pet_params)
     @pet.user = current_user
     if @pet.save
