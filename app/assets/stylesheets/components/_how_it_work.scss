@@ -1,0 +1,32 @@
+.how-it-works{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr ;
+  grid-gap: 16px;
+  margin: 15px;
+  padding: 10px;
+}
+
+.title-how-it-works{
+  text-align: center;
+  margin: 20px;
+}
+
+
+
+.card-h2{
+  color: rgb(53, 49, 49);
+  font-size: 18px;
+  text-align: center;
+  font-weight: bold;
+
+}
+
+.li-tag{
+  font-size: 38px;
+  text-align: center;
+  font-weight: bold;
+  list-style: none;
+  color: rgb(23, 187, 114);
+
+
+}

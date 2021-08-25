@@ -14,3 +14,41 @@
         <%= link_to 'Create a pet listing', new_pet_path, class: 'btn btn-success' %>
   </div>
 </div>
+
+
+<div>
+    <h2 class='title-how-it-works'>How it works</h2>
+    <div class="how-it-works">
+      <div>
+        <li class="li-tag"><i class="fas fa-search"></i></li>
+        <h2 class="card-h2">Browse Exotic pets.</h2>
+        <p>Browse our range of loving,friendly and cuddly Exotic pets for a memorable experience.</p>
+      </div>
+      <div>
+       <li class="li-tag"> <i class="fas fa-pound-sign "></i></li>
+        <h2 class="card-h2">Book and Pay on Exotica.</h2>
+        <p>Check availability, arrange a meet and greet.</p>
+        <p>Book and pay online.</p>
+      </div>
+      <div>
+       <li class="li-tag"><i class="fas fa-smile"></i></li>
+        <h2 class="card-h2">Relax</h2>
+        <p>Your Exotic pet will soon join it's new family.</p>
+      </div>
+
+</div>
+</div>
+
+<div class="pets-grid">
+    <% @pets.each do |pet| %>
+      <div class="card-product">
+        <img src="http://loremflickr.com/280/280/<%= pet.species %>" />
+        <div class="card-product-infos">
+          <h2><%= pet.name %></h2>
+          <p>Specie:<%= pet.species %></strong></p>
+          <p> <strong><%= pet.description %></strong></p>
+        </div>
+      </div>
+    <% end %>
+
+</div>
