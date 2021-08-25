@@ -3,7 +3,7 @@
   <div class="photos">
   <%#= raise %>
     <% @pet.photos.each do |photo| %>
-      <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
+      <%= cl_image_tag photo.key, crop: :fill %>
     <% end %>
   </div>
 
@@ -60,15 +60,18 @@
   <p> Check out our other featured pets:</p>
   <div class="pets-grid">
       <% @pets.each do |pet| %>
-        <div class="card-product">
-          <%# link_to 'Pet listing', pet_path(pet) %>
-            <img src="http://loremflickr.com/280/280/<%= pet.species %>" />
+        <%= link_to pet_path(pet), class: "card-product" do %>
+            <% if pet.photos.attached? %>
+              <%= cl_image_tag pet.photos[0].key %>
+            <% else %>
+              <img src="http://loremflickr.com/280/280/ <%= pet.species %>" />
+            <% end %>
             <div class="card-product-infos">
               <h2><%= pet.name %></h2>
               <p> Species:<%= pet.species %></strong></p>
               <p> <strong><%= pet.description %></strong></p>
             </div>
-        </div>
+        <% end %>
       <% end %>
   </div>
 </div>

@@ -41,7 +41,11 @@
 <div class="pets-grid">
     <% @pets.each do |pet| %>
       <%= link_to pet_path(pet), class: "card-product" do %>
-          <img src="http://loremflickr.com/280/280/<%= pet.species %>" />
+          <% if pet.photos.attached? %>
+            <%= cl_image_tag pet.photos[0].key %>
+          <% else %>
+            <img src="http://loremflickr.com/280/280/ <%= pet.species %>" />
+          <% end %>
           <div class="card-product-infos">
             <h2><%= pet.name %></h2>
             <p> Species:<%= pet.species %></strong></p>
@@ -49,5 +53,4 @@
           </div>
       <% end %>
     <% end %>
-
 </div>
