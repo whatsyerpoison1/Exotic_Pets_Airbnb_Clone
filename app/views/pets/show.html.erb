@@ -1,16 +1,14 @@
 <h1>Showpage</h1>
 <div class="container">
   <div class="photos">
-    <img src="http://fakeimg.pl/360x360/000/?text=1">
-    <img src="http://fakeimg.pl/360x360/111/?text=2">
-    <img src="http://fakeimg.pl/360x360/222/?text=3">
-    <img src="http://fakeimg.pl/360x360/333/?text=4">
+    <% @article.photos.each do |photo| %>
+      <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
+    <% end %>
   </div>
 </div>
 <p> Name </p>
 <%= @pet.name %>
 <p> provided by </p>
-<%#= @pet.user %>
 <br>
 <%= @pet.species %>
 <br>
