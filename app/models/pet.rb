@@ -4,6 +4,6 @@ class Pet < ApplicationRecord
   validates :name, presence: true, uniqueness: true
   validates :species, presence: true
   validates :description, presence: true
-  has_one_attached :photo
+  has_many_attached :photo
 
 end
