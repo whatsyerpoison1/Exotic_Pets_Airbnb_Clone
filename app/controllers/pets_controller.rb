@@ -1,4 +1,5 @@
 class PetsController < ApplicationController
+
   def index
     @pets = Pet.all
   end
@@ -30,6 +31,7 @@ class PetsController < ApplicationController
     @pet = Pet.new(pet_params)
     @pet.user = current_user
     if @pet.save
+      flash[:notice] = "Pet listing created!"
       redirect_to pet_path(@pet)
     else
       render :new
@@ -44,6 +46,6 @@ class PetsController < ApplicationController
 private
 
   def pet_params
-    params.require(:pet).permit(:name, :species, :description)
+    params.require(:pet).permit(:name, :species, :description, photos:[])
   end
 end
