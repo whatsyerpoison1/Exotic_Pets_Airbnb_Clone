@@ -13,15 +13,12 @@
               <%= img src="http://loremflickr.com/280/280/" %>
             <% end %>
 
-
-
           <% end %>
         </div>
-        <%# <div class="booking-grid"> %>
-            <h2 class='title-how-it-works'></h2>
-            <div class="how-it-works">
+          <h2 class='title-how-it-works'></h2>
+            <div class="showgrid">
               <div>
-                <h2 class="card-h2">Name</h2>
+                <h2 class="card-h2">Name:</h2>
                   <div class= "info">
                     <%= @pet.name %>
                   </div>
@@ -47,9 +44,7 @@
           </div>
         </div>
 </div>
-    <%# <button name="button" type="submit" class="btn btn-primary">
-            <%= link_to 'Update listing', edit_pet_path(@pet.id) %>
-    <%# </button> %>
+
 <div class="d-flex justify-content-center w-100">
   <% if current_user != @pet.user %>
       <%= link_to "Book me!", new_pet_booking_path(@pet.id), class:"btn btn-success" %>
@@ -88,5 +83,5 @@
             </div>
         <% end %>
       <% end %>
-    <% end %>
+
 </div>

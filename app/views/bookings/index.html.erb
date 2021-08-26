@@ -1,9 +1,25 @@
   <div class="main-title text-center">
     <h1> Bookings </h1>
   </div>
-  <%# <h2> Upcoming bookings for my listed pets</h2> %>
+ <h2 class="text-center"> Upcoming bookings for my listed pets</h2>
+  <div class="pets-grid">
+    <% @bookings_as_owner.each do |booking| %>
+      <%= link_to pet_booking_path(booking.pet.id, booking.id), class: "card-product" do %>
+          <% if booking.pet.photos.attached? %>
+            <%= cl_image_tag booking.pet.photos[0].key %>
+          <% else %>
+            <img src="http://loremflickr.com/280/280/ <%= booking.pet.species %>" />
+          <% end %>
+          <div class="card-product-infos">
+            <h2><%= booking.pet.name %></h2>
+            <p> Species:<%= booking.pet.species %></strong></p>
+            <p> <strong><%= booking.pet.description %></strong></p>
+          </div>
+      <% end %>
+    <% end %>
+</div>
 
-<h2 class="text-center"> My bookings </h2>
+<h2 class="text-center"> Animals I have booked </h2>
 <div class="pets-grid">
     <% @bookings.each do |booking| %>
       <%= link_to pet_booking_path(booking.pet.id, booking.id), class: "card-product" do %>

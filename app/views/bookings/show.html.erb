@@ -10,9 +10,7 @@
           <br>
 
           <div class="card-product">
-            <%= cl_image_tag @booking.pet.photos[0], crop: :fill %>
-          <br>
-          <br>
+            <%= cl_image_tag @booking.pet.photos[0].key, crop: :fill %>
             <div class="card-product-infos">
               <h2>You have booked <%= @booking.pet.name %></h2>
               <p>From: <%= @booking.start_date.to_time.strftime("%e %b %Y") %></p>

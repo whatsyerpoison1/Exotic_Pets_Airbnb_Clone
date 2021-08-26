@@ -4,6 +4,7 @@ class BookingsController < ApplicationController
 
   def index
     @bookings = Booking.where(user: current_user)
+    @bookings_as_owner = Booking.includes(:pet).where(pets: {user: current_user})
   end
 
   def show
