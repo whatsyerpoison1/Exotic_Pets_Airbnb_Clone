@@ -14,5 +14,7 @@ user = User.create(email: "test@gmail.com", password: "password")
 50.times do
   pet = Pet.new(name: Faker::Name.name, species: Faker::Creature::Animal.name, price: rand(1000..20000) ,description: Faker::Quote.most_interesting_man_in_the_world)
   pet.user = user
+  file = URI.open("http://loremflickr.com/280/280/ <%= pet.species %>")
+  pet.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
   pet.save
 end
