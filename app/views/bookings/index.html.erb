@@ -1,0 +1,35 @@
+<h1> My Bookings </h1>
+<h2> My pets</h2>
+<div class="pets-grid">
+    <% @current_user.pets.bookings.each do |pet| %>
+      <%= link_to pet_path(pet), class: "card-product" do %>
+          <% if pet.photos.attached? %>
+            <%= cl_image_tag pet.photos[0].key %>
+          <% else %>
+            <img src="http://loremflickr.com/280/280/ <%= pet.species %>" />
+          <% end %>
+          <div class="card-product-infos">
+            <h2><%= pet.name %></h2>
+            <p> Species:<%= pet.species %></strong></p>
+            <p> <strong><%= pet.description %></strong></p>
+          </div>
+      <% end %>
+    <% end %>
+</div>
+<h2> Other people's pets </h2>
+<div class="pets-grid">
+    <% @current_user.bookings.each do |pet| %>
+      <%= link_to pet_path(pet), class: "card-product" do %>
+          <% if pet.photos.attached? %>
+            <%= cl_image_tag pet.photos[0].key %>
+          <% else %>
+            <img src="http://loremflickr.com/280/280/ <%= pet.species %>" />
+          <% end %>
+          <div class="card-product-infos">
+            <h2><%= pet.name %></h2>
+            <p> Species:<%= pet.species %></strong></p>
+            <p> <strong><%= pet.description %></strong></p>
+          </div>
+      <% end %>
+    <% end %>
+</div>
