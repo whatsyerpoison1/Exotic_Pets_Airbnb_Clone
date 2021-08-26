@@ -1,11 +1,14 @@
 
 <div class="container">
-<h1>Booking Confirmation</h1>
-<p> Name </p>
-<%= @booking.pet.name %>
-<br>
-<%= @booking.start_date %>
-<br>
-<%= @booking.end_date %>
-<br>
+  <div class="text-center">
+    <h1> Congratulations! </h1>
+  <div class="card-product">
+      <%= cl_image_tag @booking.pet.photos[0], crop: :fill %>
+    <div class="card-product-infos">
+      <h2>You have booked <%= @booking.pet.name %>!</h2>
+      <p>From: <%= @booking.start_date.to_time.strftime("%e %b %Y") %></p>
+      <p>To: <%= @booking.end_date.to_time.strftime("%e %b %Y") %></p>
+    </div>
+  </div>
+</div>
 </div>

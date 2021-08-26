@@ -47,18 +47,19 @@
           </div>
         </div>
 </div>
-
-
-
+    <%# <button name="button" type="submit" class="btn btn-primary">
+            <%= link_to 'Update listing', edit_pet_path(@pet.id) %>
+    <%# </button> %>
+<div class="d-flex justify-content-center w-100">
   <% if current_user != @pet.user %>
-    <div class="d-flex justify-content-center w-100">
       <%= link_to "Book me!", new_pet_booking_path(@pet.id), class:"btn btn-success" %>
-    </div>
   <% else %>
-    <%= link_to 'Update listing', edit_pet_path(@pet.id) %>
+    <%= link_to 'Update listing', edit_pet_path(@pet.id), class:"btn btn-primary"  %>
   <br>
-    <%= link_to 'Delete listing', pet_path(@pet.id), method: 'delete' %>
+    <%= link_to 'Delete listing', pet_path(@pet.id), method: 'delete', class:"btn btn-warning"  %>
   <% end %>
+</div>
+
   <br>
   <br>
   <br>
@@ -67,9 +68,9 @@
   <br>
   <br>
 
-      <div id="other-pets">
-          <h3> Check out our other featured pets</h3>
-      </div>
+  <div id="other-pets">
+  <h3> Check out our other featured pets</h3>
+  </div>
 
   <div class="pets-grid">
       <% @pets.each do |pet| %>
@@ -82,10 +83,10 @@
             <div class="card-product-infos">
               <h2><%= pet.name %></h2>
               <p><%= pet.price %></p>
-              <p> Species:<%= pet.species %></strong></p>
-              <p> <strong><%= pet.description %></strong></p>
+              <p> <%= pet.species %></strong></p>
+              <p> <%= pet.description %></p>
             </div>
         <% end %>
       <% end %>
-  </div>
+    <% end %>
 </div>
