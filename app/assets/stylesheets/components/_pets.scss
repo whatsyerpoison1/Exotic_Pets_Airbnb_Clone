@@ -28,3 +28,25 @@
 .bg-white {
   opacity: 0.9;
 }
+
+.user-reviews {
+   display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-gap: 1px;
+  margin: 15px;
+}
+
+.checked {
+  color: orange;
+}
+
+.review-box {
+  margin: 40px;
+  padding: 50px;
+  border-bottom: 2px solid grey;
+}
+
+.review-title  {
+  text-align: center;
+  padding: 10px;
+}
