@@ -1,40 +1,52 @@
 
 <%# <h1>Showpage</h1> %>
-<h1 class="text-center"> <%= @pet.name %> </h1>
-<div class="container">
-  <div class="photos">
-  <%#= raise %>
-    <% @pet.photos.each do |photo| %>
-      <%= cl_image_tag photo.key, crop: :fill %>
-    <% end %>
-  </div>
+<div class="show">
+      <h1 class="text-center"> <%= @pet.name %> </h1>
+      <div class="container">
 
 
-  <%# <div class="booking-grid"> %>
-      <h2 class='title-how-it-works'></h2>
-      <div class="how-it-works">
-        <div>
-          <h2 class="card-h2">Name</h2>
-            <div class= "info">
-              <%= @pet.name %>
-            </div>
+          <% @pet.photos.each do |photo| %>
+            <% if @pet.photos.attached?%>
+            <%= raise %>
+              <%= cl_image_tag photo.key, crop: :fill %>
+            <% else %>
+              <%= img src="http://loremflickr.com/280/280/" %>
+            <% end %>
+
+
+
+          <% end %>
         </div>
-        <div>
-          <h2 class="card-h2">Species:</h2>
-          <div class= "info">
-            <%= @pet.species %>
+        <%# <div class="booking-grid"> %>
+            <h2 class='title-how-it-works'></h2>
+            <div class="how-it-works">
+              <div>
+                <h2 class="card-h2">Name</h2>
+                  <div class= "info">
+                    <%= @pet.name %>
+                  </div>
+              </div>
+              <div>
+                <h2 class="card-h2">Price</h2>
+                  <div class= "info">
+                    <%= @pet.price %>
+                  </div>
+              </div>
+              <div>
+                <h2 class="card-h2">Species:</h2>
+                <div class= "info">
+                  <%= @pet.species %>
+                </div>
+              </div>
+              <div>
+                <h2 class="card-h2">Description</h2>
+                  <div class= "info">
+                <%= @pet.description %>
+                  </div>
+              </div>
           </div>
         </div>
-        <div>
-          <h2 class="card-h2">Description</h2>
-            <div class= "info">
-          <%= @pet.description %>
-            </div>
-        </div>
-     </div>
-  </div>
-
-
+</div>
     <%# <button name="button" type="submit" class="btn btn-primary">
             <%= link_to 'Update listing', edit_pet_path(@pet.id) %>
     <%# </button> %>
@@ -60,19 +72,21 @@
   <h3> Check out our other featured pets</h3>
   </div>
 
-<div class="pets-grid">
-    <% @pets.each do |pet| %>
-      <%= link_to pet_path(pet), class: "card-product" do %>
-          <% if pet.photos.attached? %>
-            <%= cl_image_tag pet.photos[0].key %>
-          <% else %>
-            <img src="http://loremflickr.com/280/280/ <%= pet.species %>" />
-          <% end %>
-          <div class="card-product-infos">
-            <h2><%= pet.name %></h2>
-            <p><%= pet.species %></p>
-            <p>Description: <%= pet.description %></p>
-          </div>
+  <div class="pets-grid">
+      <% @pets.each do |pet| %>
+        <%= link_to pet_path(pet), class: "card-product" do %>
+            <% if pet.photos.attached? %>
+              <%= cl_image_tag pet.photos[0].key %>
+            <% else %>
+              <img src="http://loremflickr.com/280/280/ <%= pet.species %>"/>
+            <% end %>
+            <div class="card-product-infos">
+              <h2><%= pet.name %></h2>
+              <p><%= pet.price %></p>
+              <p> <%= pet.species %></strong></p>
+              <p> <%= pet.description %></p>
+            </div>
+        <% end %>
       <% end %>
     <% end %>
 </div>
