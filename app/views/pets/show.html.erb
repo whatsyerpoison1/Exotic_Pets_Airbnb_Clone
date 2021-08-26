@@ -1,12 +1,11 @@
 
-
-
 <%# <h1>Showpage</h1> %>
+h1 class="text-center"> <%= @pet.name %> </h1>
 <div class="container">
   <div class="photos">
   <%#= raise %>
     <% @pet.photos.each do |photo| %>
-      <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
+      <%= cl_image_tag photo.key, crop: :fill %>
     <% end %>
   </div>
 
@@ -23,6 +22,8 @@
         </div>
         <div>
           <h2 class="card-h2">Species</h2>
+        <li class="li-tag"> <i class="fas fa-pound-sign"></i></li>
+          <h2 class="card-h2">Species:</h2>
           <div class= "info">
             <%= @pet.species %>
           </div>
@@ -33,7 +34,6 @@
           <%= @pet.description %>
             </div>
         </div>
-
      </div>
   </div>
 
@@ -65,15 +65,18 @@
 
   <div class="pets-grid">
       <% @pets.each do |pet| %>
-        <div class="card-product">
-          <%# link_to 'Pet listing', pet_path(pet) %>
-            <img src="http://loremflickr.com/280/280/<%= pet.species %>" />
+        <%= link_to pet_path(pet), class: "card-product" do %>
+            <% if pet.photos.attached? %>
+              <%= cl_image_tag pet.photos[0].key %>
+            <% else %>
+              <img src="http://loremflickr.com/280/280/ <%= pet.species %>" />
+            <% end %>
             <div class="card-product-infos">
               <h2><%= pet.name %></h2>
               <p> Species:<%= pet.species %></strong></p>
               <p> <strong><%= pet.description %></strong></p>
             </div>
-        </div>
+        <% end %>
       <% end %>
   </div>
 </div>

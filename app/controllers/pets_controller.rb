@@ -19,7 +19,6 @@ class PetsController < ApplicationController
       flash[:notice] = "Pet listing updated!"
       redirect_to pet_path(@pet)
     else
-      raise
       render :new
     end
   end

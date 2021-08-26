@@ -1,6 +1,7 @@
 <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1612975631838-719497229ee4?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1500&q=80);">
   <div class="container">
-    <h1>Welcome to  <strong>Exotica</strong>, a world of <strong>Exotic Animals</strong>!</h1>
+    <h1 class="main-title" style="text-align: center";
+>Welcome to  <strong>Exotica</strong>, a world of <strong>exotic animals</strong>!</h1>
     <p>Find an Exotic pet today.</p>
     <%= simple_form_for :search, url: root_path, method: :get do |f| %>
       <div class="search-form-control form-group">
@@ -24,19 +25,19 @@
     <div class="how-it-works">
       <div>
         <li class="li-tag"><i class="fas fa-search"></i></li>
-        <h2 class="card-h2">Browse Exotic pets.</h2>
-        <p>Browse our range of loving,friendly and cuddly Exotic pets for a memorable experience.</p>
+        <h2 class="card-h2" >Browse exotic pets</h2>
+        <p>Browse our range of loving, friendly and cuddly Exotic pets for a memorable experience.</p>
       </div>
       <div>
        <li class="li-tag"> <i class="fas fa-pound-sign "></i></li>
-        <h2 class="card-h2">Book and Pay on Exotica.</h2>
-        <p>Check availability, arrange a meet and greet.</p>
+        <h2 class="card-h2">Book and pay on Exotica</h2>
+        <p>Check availability, arrange a meet-and-greet.</p>
         <p>Book and pay online.</p>
       </div>
       <div>
        <li class="li-tag"><i class="fas fa-smile"></i></li>
         <h2 class="card-h2">Relax</h2>
-        <p>Your Exotic pet will soon join it's new family.</p>
+        <p>Your exotic pet will soon join its new family.</p>
       </div>
 
 </div>
@@ -45,7 +46,11 @@
 <div class="pets-grid">
     <% @pets.each do |pet| %>
       <%= link_to pet_path(pet), class: "card-product" do %>
-          <img src="http://loremflickr.com/280/280/<%= pet.species %>" />
+          <% if pet.photos.attached? %>
+            <%= cl_image_tag pet.photos[0].key %>
+          <% else %>
+            <img src="http://loremflickr.com/280/280/ <%= pet.species %>" />
+          <% end %>
           <div class="card-product-infos">
             <h2><%= pet.name %></h2>
             <p> Species:<%= pet.species %></strong></p>
@@ -53,5 +58,4 @@
           </div>
       <% end %>
     <% end %>
-
 </div>

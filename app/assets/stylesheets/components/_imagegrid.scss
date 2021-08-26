@@ -5,10 +5,9 @@
 
 .photos {
   display: flex;
-  background-color: #000;
   flex-direction: row;
   flex-wrap: wrap;
-  justify-content: flex-start;
+  justify-content: center;
   align-content: stretch;
   padding: 0;
   max-width: 980px;
@@ -19,6 +18,7 @@
   float: left;
   flex: 0 0 auto;
   background-color: #fff;
+  height: 500px;
 }
 
 
