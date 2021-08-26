@@ -1,4 +1,6 @@
-<h1 class="text-center"> <%= @pet.name %> </h1>
+
+<%# <h1>Showpage</h1> %>
+h1 class="text-center"> <%= @pet.name %> </h1>
 <div class="container">
   <div class="photos">
   <%#= raise %>
@@ -8,17 +10,18 @@
   </div>
 
 
-  <div>
+  <div class="booking-grid">
       <h2 class='title-how-it-works'></h2>
       <div class="how-it-works">
         <div>
-          <li class="li-tag"><i class="fas fa-search"></i></li>
-           <h2 class="card-h2">Name:</h2>
+
+           <h2 class="card-h2">Name</h2>
             <div class= "info">
               <%= @pet.name %>
             </div>
         </div>
         <div>
+          <h2 class="card-h2">Species</h2>
         <li class="li-tag"> <i class="fas fa-pound-sign"></i></li>
           <h2 class="card-h2">Species:</h2>
           <div class= "info">
@@ -26,14 +29,18 @@
           </div>
         </div>
         <div>
-        <li class="li-tag"><i class="fas fa-smile"></i></li>
           <h2 class="card-h2">Description</h2>
             <div class= "info">
           <%= @pet.description %>
             </div>
         </div>
+     </div>
   </div>
-  </div>
+
+
+    <%# <button name="button" type="submit" class="btn btn-primary">
+            <%= link_to 'Update listing', edit_pet_path(@pet.id) %>
+    <%# </button> %>
 
   <% if current_user != @pet.user %>
     <div class="d-flex justify-content-center w-100">
@@ -51,12 +58,11 @@
   <br>
   <br>
   <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <p> Check out our other featured pets:</p>
+
+      <div id="other-pets">
+          <h3> Check out our other featured pets</h3>
+      </div>
+
   <div class="pets-grid">
       <% @pets.each do |pet| %>
         <%= link_to pet_path(pet), class: "card-product" do %>

@@ -1,6 +1,6 @@
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
 <%= link_to root_path, class: "navbar-brand" do %>
-<i class="fas fa-kiwi-bird"></i>
+<%= image_tag 'logo3.png'%>
 <% end %>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
@@ -11,14 +11,19 @@
 
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
-        <a class="nav-link" href="#">Home</a>
+      <%= link_to 'Home',  root_path, class: "nav-link" %>
       </li>
+
       <li class="nav-item active">
-        <a class="nav-link" href="#">Bookings</a>
+      <%= link_to 'Bookings',  new_user_session_path, class: "nav-link" %>
       </li>
-      <li class="nav-item active">
+
+       <li class="nav-item active">
       <%= link_to 'New-pet', new_pet_path, class: "nav-link" %>
       </li>
+
+
+
       <li class="nav-item dropdown">
       <%= image_tag "adams.jpg",class: "avatar dropdown-toggle", id: "navbarDropdown", data: {toggle: "dropdown"}, aria: {haspopup: "true", expanded: "false"} %>
 
