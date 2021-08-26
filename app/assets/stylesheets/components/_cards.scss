@@ -5,6 +5,12 @@
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   display: flex;
   align-items: center;
+  text-decoration: none;
+  color: black;
+}
+
+a.card-product:hover {
+  text-decoration: none;
 }
 
 .card-product img {
@@ -46,8 +52,4 @@
   grid-gap: 16px;
   margin: 15px;
   border: 3px solid black;
-}
-
-p {
-  text-align: center;
 }
