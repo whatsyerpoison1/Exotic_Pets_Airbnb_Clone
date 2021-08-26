@@ -10,9 +10,8 @@
             placeholder: "Search an exotic pet...."
           %>
         <br>
-        <button name="button" type="submit" class="btn btn-primary">
-          <i class="fas fa-search"></i> Explore
-        </button>
+        <%= link_to 'explore', pets_path, class: "btn btn-primary"%>
+
       </div>
     <% end %>
         <%= link_to 'Create a pet listing', new_pet_path, class: 'btn btn-success' %>
