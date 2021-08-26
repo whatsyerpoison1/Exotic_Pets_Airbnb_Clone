@@ -3,9 +3,13 @@
     <h1 class="main-title" style="text-align: center";
 >Welcome to  <strong>Exotica</strong>, a world of <strong>exotic animals</strong>!</h1>
     <p>Find an Exotic pet today.</p>
-    <%= simple_form_for :search, url: root_path, method: :get do |f| %>
+    <%= form_tag pets_path, method: :get do |f| %>
       <div class="search-form-control form-group">
-        <input class="form-control string required" type="text" name="search[query]" id="search_query" placeholder="Search an exotic pet...." />
+          <%= text_field_tag :query,
+            params[:query],
+            class: "form-control string required",
+            placeholder: "Search an exotic pet...."
+          %>
         <br>
         <button name="button" type="submit" class="btn btn-primary">
           <i class="fas fa-search"></i> Explore

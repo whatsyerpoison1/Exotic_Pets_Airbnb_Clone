@@ -1,7 +1,11 @@
 class PetsController < ApplicationController
 
   def index
-    @pets = Pet.all
+    if params[:query]
+      @pets = Pet.global_search(params[:query])
+    else
+      @pets = Pet.all
+    end
   end
 
   def show
