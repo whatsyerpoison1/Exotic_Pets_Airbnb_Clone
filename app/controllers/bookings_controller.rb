@@ -2,6 +2,10 @@ class BookingsController < ApplicationController
   before_action :set_booking, only: :destroy
   before_action :set_pet, only: [:new, :create]
 
+  def index
+    @bookings = Booking.where(user: current_user)
+  end
+
   def show
     @booking = Booking.find(params[:id])
   end
