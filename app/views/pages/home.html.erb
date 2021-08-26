@@ -1,2 +1,130 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1612975631838-719497229ee4?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1500&q=80);">
+  <div class="container"  style="text-align: center">
+    <h1 class="main-title"> Welcome to  <strong>Exotica</strong>, a world of <strong>exotic animals</strong>!</h1>
+    <p>Find an Exotic pet today.</p>
+    <%= form_tag pets_path, method: :get do |f| %>
+      <div class="search-form-control form-group">
+          <%= text_field_tag :query,
+            params[:query],
+            class: "form-control string required",
+            placeholder: "Search an exotic pet...."
+          %>
+        <br>
+        <button name="button" type="submit" class="btn btn-primary">
+          <i class="fas fa-search"></i> Explore
+        </button>
+      </div>
+    <% end %>
+        <%= link_to 'Create a pet listing', new_pet_path, class: 'btn btn-success' %>
+  </div>
+</div>
+<br><br>
+
+<div>
+            <h2 class='title-how-it-works'>How it works</h2>
+            <div class="how-it-works">
+              <div>
+                <li class="li-tag"><i class="fas fa-search"></i></li>
+                <h2 class="card-h2" >Browse exotic pets</h2>
+                <p>Browse our range of exotic animals for business purposes or a memorable experience.</p>
+              </div>
+              <div>
+              <li class="li-tag"> <i class="fas fa-pound-sign "></i></li>
+                <h2 class="card-h2">Book and pay on Exotica</h2>
+                <p>Check availability, arrange a meet-and-greet.</p>
+                <p>Book and pay online.</p>
+              </div>
+              <div>
+              <li class="li-tag"><i class="fas fa-smile"></i></li>
+                <h2 class="card-h2">Relax</h2>
+                <p>Your exotic pet will soon join its new family.</p>
+              </div>
+
+        </div>
+
+
+<div class="review-box">
+    <div class="review-title">
+        <h2>Here's what our clients have to say about their experiences </h2>
+    </div>
+<div class="user-reviews">
+   <div class="card" style="width: 18rem;">
+      <%# <img class="card-img-top" src=".../100px180/" alt="Card image cap"> %>
+      <%= image_tag 'review-pics1.jpg'%>
+      <div class="card-body">
+        <h5 class="card-title">Ivana</h5>
+          <div class="checked">
+              <span class="fa fa-star checked"></span>
+              <span class="fa fa-star checked"></span>
+              <span class="fa fa-star checked"></span>
+              <span class="fa fa-star checked"></span>
+              <span class="fa fa-star-half-0 checked"></span>
+          </div>
+          <a href="#">338 Google reviews</a>
+          <br><br>
+        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+      </div>
+    </div>
+
+
+     <div class="card" style="width: 18rem;">
+      <%# <img class="card-img-top" src=".../100px180/" alt="Card image cap"> %>
+      <%= image_tag 'review-pics2.jpg'%>
+      <div class="card-body">
+        <h5 class="card-title">Natalia</h5>
+          <div class="checked">
+              <span class="fa fa-star checked"></span>
+              <span class="fa fa-star checked"></span>
+              <span class="fa fa-star checked"></span>
+              <span class="fa fa-star checked"></span>
+              <span class="fa fa-star-half-0 checked"></span>
+          </div>
+          <a href="#">338 Google reviews</a>
+          <br><br>
+        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+      </div>
+    </div>
+
+
+    <div class="card" style="width: 18rem;">
+      <%# <img class="card-img-top" src=".../100px180/" alt="Card image cap"> %>
+      <%= image_tag 'review-pics3.jpg'%>
+      <div class="card-body">
+        <h5 class="card-title">Justine</h5>
+          <div class="checked">
+              <span class="fa fa-star checked"></span>
+              <span class="fa fa-star checked"></span>
+              <span class="fa fa-star checked"></span>
+              <span class="fa fa-star checked"></span>
+              <span class="fa fa-star-half-0 checked"></span>
+          </div>
+          <a href="#">338 Google reviews</a>
+          <br><br>
+        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+      </div>
+    </div>
+
+    <div class="card" style="width: 18rem;">
+      <%# <img class="card-img-top" src=".../100px180/" alt="Card image cap"> %>
+      <%= image_tag 'review-pics4.jpg'%>
+      <div class="card-body">
+        <h5 class="card-title">Mohammed</h5>
+          <div class="checked">
+              <span class="fa fa-star checked"></span>
+              <span class="fa fa-star checked"></span>
+              <span class="fa fa-star checked"></span>
+              <span class="fa fa-star checked"></span>
+              <span class="fa fa-star-half-0 checked"></span>
+          </div>
+          <a href="#">338 Google reviews</a>
+          <br><br>
+        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+      </div>
+    </div>
+</div>
+
+<br><br>
+
+
+</div>
+</div>
