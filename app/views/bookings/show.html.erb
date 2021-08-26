@@ -1,14 +1,27 @@
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1615157707631-e86257f56d8c?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1500&q=80);">
+  <div class="container py-5 " >
+    <div class="row">
+      <div class="col-12 col-md-6 offset-lg-3">
+        <div class="container">
+          <div class="text-center">
+            <h1> Booking Confirmation </h1>
+              <br>
+          <br>
+          <br>
 
-<div class="container">
-  <div class="text-center">
-    <h1> Congratulations! </h1>
-  <div class="card-product">
-      <%= cl_image_tag @booking.pet.photos[0], crop: :fill %>
-    <div class="card-product-infos">
-      <h2>You have booked <%= @booking.pet.name %>!</h2>
-      <p>From: <%= @booking.start_date.to_time.strftime("%e %b %Y") %></p>
-      <p>To: <%= @booking.end_date.to_time.strftime("%e %b %Y") %></p>
+          <div class="card-product">
+            <%= cl_image_tag @booking.pet.photos[0], crop: :fill %>
+          <br>
+          <br>
+            <div class="card-product-infos">
+              <h2>You have booked <%= @booking.pet.name %></h2>
+              <p>From: <%= @booking.start_date.to_time.strftime("%e %b %Y") %></p>
+              <p>To: <%= @booking.end_date.to_time.strftime("%e %b %Y") %></p>
+            </div>
+          </div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
-</div>
 </div>

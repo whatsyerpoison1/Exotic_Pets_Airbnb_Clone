@@ -6,7 +6,7 @@
 <h2 class="text-center"> My bookings </h2>
 <div class="pets-grid">
     <% @bookings.each do |booking| %>
-      <%= link_to pet_path(booking.pet), class: "card-product" do %>
+      <%= link_to pet_booking_path(booking.pet.id, booking.id), class: "card-product" do %>
           <% if booking.pet.photos.attached? %>
             <%= cl_image_tag booking.pet.photos[0].key %>
           <% else %>
