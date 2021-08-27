@@ -4,15 +4,15 @@
     <div class="col-12 col-md-6 offset-lg-3">
       <div class="bg-white rounded p-3 shadow">
         <h3>Create a new booking</h3>
-        <%= simple_form_for [@pet, @booking] do |f| %>
+            <% if current_user %>
+            <%= simple_form_for [@pet, @booking] do |f| %>
           <%= f.input :start_date, placeholder: 'Start date' %>
           <%= f.input :end_date, placeholder: 'End date' %>
-            <% if current_user %>
           <%= f.submit class: 'btn btn-success' %>
-            <% else %>
-              <p> Please sign in to book. </p>
             <% end %>
-        <% end %>
+            <% else %>
+              <%= link_to 'Please sign up to book now', new_user_registration_path, class: "btn btn-success" %>
+            <% end %>
       </div>
     </div>
   </div>
