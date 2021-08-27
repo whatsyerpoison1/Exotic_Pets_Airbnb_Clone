@@ -1,57 +1,40 @@
 <%# <h1>Showpage</h1> %>
 <div class="container d-flex justify-content-between" >
       <%# <h1 class="text-center"> <%= @pet.name %>
-        <div class="">
-          <% @pet.photos.each do |photo| %>
-              <%= cl_image_tag photo.key, width:"500", radius:"5", crop: :fill %>
-<div class="show">
-      <h1 class="text-center"> <%= @pet.name %> </h1>
-      <div class="container">
-        <div class="photos photos-img">
-
-          <% @pet.photos.each do |photo| %>
-            <% if @pet.photos.attached? %>
-              <%= cl_image_tag photo.key, crop: :fill %>
-            <% else %>
-              <%= img src="http://loremflickr.com/280/280/" %>
-            <% end %>
-          <% end %>
+  <div class="show-box">
+    <% @pet.photos.each do |photo| %>
+      <%= cl_image_tag photo.key, width:"500", radius:"5", crop: :fill, class:"show-box-photo" %>
+    <% end %>
+  <div class="show">
+      <div class="side-card">
+        <div class="card text-left" style="width: 22rem; height: 32rem;">
+          <div class="card-body">
+            <div class="side-card-info">
+              <%= image_tag "tiger.jpg",  class:"round-img-card"%>
+            <div>
+             <h5 class="card-title"> <%= @pet.name %></h5>
+              <div class="checked">
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star-half-0 checked"></span>
+              </div>
+              <a href="#">33 Google reviews</a>
           </div>
         </div>
-
-
-        <div class="side-card">
-          <h2 class='title-how-it-works'></h2>
-          <div class="card text-left" style="width: 22rem; height: 32rem;">
-  <div class="card-body">
-      <div class="side-card-info">
-       <%= image_tag "tiger.jpg",  class:"round-img-card"%>
-          <div>
-             <h5 class="card-title">Maxi</h5>
-              <div class="checked">
-              <span class="fa fa-star checked"></span>
-              <span class="fa fa-star checked"></span>
-              <span class="fa fa-star checked"></span>
-              <span class="fa fa-star checked"></span>
-              <span class="fa fa-star-half-0 checked"></span>
-          </div>
-          <a href="#">33 Google reviews</a>
-
-          </div>
-      </div>
-
-          <hr>
-    <p class="card-text">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Temporibus a alias reiciendis cupiditate beatae amet voluptatem vitae quasi aliquid est quibusdam voluptatibus, fugit molestias in consectetur minima quod, necessitatibus illum..</p>
-    <br> <br>
-    <div class="d-flex justify-content-center w-100">
-  <% if current_user != @pet.user %>
-      <%= link_to "Book me!", new_pet_booking_path(@pet.id), class:"btn btn-success" %>
-  <% else %>
-    <%= link_to 'Update listing', edit_pet_path(@pet.id), class:"btn btn-primary"  %>
-  <br>
-    <%= link_to 'Delete listing', pet_path(@pet.id), method: 'delete', class:"btn btn-warning"  %>
-  <% end %>
-</div>
+      <hr>
+      <p class="card-text">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Temporibus a alias reiciendis cupiditate beatae amet voluptatem vitae quasi aliquid est quibusdam voluptatibus, fugit molestias in consectetur minima quod, necessitatibus illum..</p>
+      <br> <br>
+      <div class="d-flex justify-content-center w-100">
+      <% if current_user != @pet.user %>
+        <%= link_to "Book me!", new_pet_booking_path(@pet), class:"btn btn-success" %>
+       <% else %>
+      <%= link_to 'Update listing', edit_pet_path(@pet), class:"btn btn-primary"  %>
+        <br>
+      <%= link_to 'Delete listing', pet_path(@pet), method: 'delete', class:"btn btn-warning"  %>
+      <% end %>
+    </div>
   </div>
 </div>
 

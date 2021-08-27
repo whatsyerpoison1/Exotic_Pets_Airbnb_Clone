@@ -1,0 +1,10 @@
+.show-box {
+  display: flex;
+  height: 500px;
+
+}
+.show-box-photo {
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
