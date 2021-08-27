@@ -1,5 +1,9 @@
-
 <%# <h1>Showpage</h1> %>
+<div class="container d-flex justify-content-between" >
+      <%# <h1 class="text-center"> <%= @pet.name %>
+        <div class="">
+          <% @pet.photos.each do |photo| %>
+              <%= cl_image_tag photo.key, width:"500", radius:"5", crop: :fill %>
 <div class="show">
       <h1 class="text-center"> <%= @pet.name %> </h1>
       <div class="container">
@@ -14,37 +18,32 @@
           <% end %>
           </div>
         </div>
-          <h2 class='title-how-it-works'></h2>
-            <div class="showgrid">
-              <div>
-                <h2 class="card-h2">Name:</h2>
-                  <div class= "info">
-                    <%= @pet.name %>
-                  </div>
-              </div>
-              <div>
-                <h2 class="card-h2">Price</h2>
-                  <div class= "info">
-                    <%= @pet.price %>
-                  </div>
-              </div>
-              <div>
-                <h2 class="card-h2">Species:</h2>
-                <div class= "info">
-                  <%= @pet.species %>
-                </div>
-              </div>
-              <div>
-                <h2 class="card-h2">Description</h2>
-                  <div class= "info">
-                <%= @pet.description %>
-                  </div>
-              </div>
-          </div>
-        </div>
-</div>
 
-<div class="d-flex justify-content-center w-100">
+
+        <div class="side-card">
+          <h2 class='title-how-it-works'></h2>
+          <div class="card text-left" style="width: 22rem; height: 32rem;">
+  <div class="card-body">
+      <div class="side-card-info">
+       <%= image_tag "tiger.jpg",  class:"round-img-card"%>
+          <div>
+             <h5 class="card-title">Maxi</h5>
+              <div class="checked">
+              <span class="fa fa-star checked"></span>
+              <span class="fa fa-star checked"></span>
+              <span class="fa fa-star checked"></span>
+              <span class="fa fa-star checked"></span>
+              <span class="fa fa-star-half-0 checked"></span>
+          </div>
+          <a href="#">33 Google reviews</a>
+
+          </div>
+      </div>
+
+          <hr>
+    <p class="card-text">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Temporibus a alias reiciendis cupiditate beatae amet voluptatem vitae quasi aliquid est quibusdam voluptatibus, fugit molestias in consectetur minima quod, necessitatibus illum..</p>
+    <br> <br>
+    <div class="d-flex justify-content-center w-100">
   <% if current_user != @pet.user %>
       <%= link_to "Book me!", new_pet_booking_path(@pet.id), class:"btn btn-success" %>
   <% else %>
@@ -53,14 +52,20 @@
     <%= link_to 'Delete listing', pet_path(@pet.id), method: 'delete', class:"btn btn-warning"  %>
   <% end %>
 </div>
+  </div>
+</div>
 
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
+
+              </div>
+        </div>
+
+    </div>
+</div>
+
+
+
+
+
 
   <div id="other-pets">
   <h3> Check out our other featured pets</h3>

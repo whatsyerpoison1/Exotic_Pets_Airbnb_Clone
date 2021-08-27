@@ -59,3 +59,23 @@ a.card-product:hover {
   margin: 15px;
   border: 3px solid black;
 }
+
+
+.side-card-info{
+ display: flex;
+ justify-content: space-between;
+
+}
+
+// .show-grid{
+// display:flex;
+// justify-content: space-between;
+// margin-left: 10px;
+// }
+
+.round-img-card{
+  width: 75px;
+  height: 75px;
+  border-radius: 50%;
+  object-fit: cover;
+}
