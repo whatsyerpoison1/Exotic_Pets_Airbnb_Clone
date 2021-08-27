@@ -1,16 +1,16 @@
 <%# <h1>Showpage</h1> %>
 <div class="container d-flex justify-content-between" >
       <%# <h1 class="text-center"> <%= @pet.name %>
-  <div class="show-box">
+  <div class="show-box d-flex justify-content-between">
     <% @pet.photos.each do |photo| %>
       <%= cl_image_tag photo.key, width:"500", radius:"5", crop: :fill, class:"show-box-photo" %>
     <% end %>
   <div class="show">
       <div class="side-card">
-        <div class="card text-left" style="width: 22rem; height: 32rem;">
+        <div class="card text-left" style="width: 22rem; height: 31.3rem;">
           <div class="card-body">
             <div class="side-card-info">
-              <%= image_tag "tiger.jpg",  class:"round-img-card"%>
+              <%= image_tag "ike1.JPG",  class:"round-img-card"%>
             <div>
              <h5 class="card-title"> <%= @pet.name %></h5>
               <div class="checked">
@@ -24,13 +24,14 @@
           </div>
         </div>
       <hr>
+      <P>£ 1.499</P>
       <p class="card-text">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Temporibus a alias reiciendis cupiditate beatae amet voluptatem vitae quasi aliquid est quibusdam voluptatibus, fugit molestias in consectetur minima quod, necessitatibus illum..</p>
       <br> <br>
       <div class="d-flex justify-content-center w-100">
       <% if current_user != @pet.user %>
         <%= link_to "Book me!", new_pet_booking_path(@pet), class:"btn btn-success" %>
        <% else %>
-      <%= link_to 'Update listing', edit_pet_path(@pet), class:"btn btn-primary"  %>
+      <%= link_to 'Update listing', edit_pet_path(@pet), class:"btn btn-primary mr-2"  %>
         <br>
       <%= link_to 'Delete listing', pet_path(@pet), method: 'delete', class:"btn btn-warning"  %>
       <% end %>
@@ -44,13 +45,13 @@
 
     </div>
 </div>
+<br><br><br>
 
 
 
 
 
-
-  <div id="other-pets">
+  <div id="other-pets text-center">
   <h3> Check out our other featured pets</h3>
   </div>
 
