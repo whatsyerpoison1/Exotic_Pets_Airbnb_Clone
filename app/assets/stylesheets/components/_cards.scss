@@ -7,6 +7,7 @@
   align-items: center;
   text-decoration: none;
   color: black;
+  text-align: center;
 }
 
 a.card-product:hover {
@@ -35,6 +36,11 @@ a.card-product:hover {
 
 .card-product .card-product-infos {
   padding: 16px;
+  justify-content: center;
+}
+
+.card-product .card-product-infos p {
+  text-align: center;
 }
 
 .pets-grid{

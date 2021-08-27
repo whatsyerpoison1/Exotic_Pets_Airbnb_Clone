@@ -3,17 +3,16 @@
 <div class="show">
       <h1 class="text-center"> <%= @pet.name %> </h1>
       <div class="container">
-
+        <div class="photos photos-img">
 
           <% @pet.photos.each do |photo| %>
-            <% if @pet.photos.attached?%>
-            <%= raise %>
+            <% if @pet.photos.attached? %>
               <%= cl_image_tag photo.key, crop: :fill %>
             <% else %>
               <%= img src="http://loremflickr.com/280/280/" %>
             <% end %>
-
           <% end %>
+          </div>
         </div>
           <h2 class='title-how-it-works'></h2>
             <div class="showgrid">
