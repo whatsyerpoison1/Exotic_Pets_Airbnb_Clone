@@ -1,6 +1,6 @@
 .card-product {
   overflow: hidden;
-  height: 120px;
+  height: 140px;
   background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   display: flex;
@@ -36,11 +36,8 @@ a.card-product:hover {
 
 .card-product .card-product-infos {
   padding: 16px;
-  justify-content: center;
-}
-
-.card-product .card-product-infos p {
-  text-align: center;
+  text-align: left;
+  color: black;
 }
 
 .pets-grid{
@@ -48,8 +45,7 @@ a.card-product:hover {
   grid-template-columns: 1fr 1fr 1fr ;
   grid-gap: 16px;
   margin: 15px;
-
-}
+  text-align: left !important}
 
 .booking-grid{
  display: grid;
