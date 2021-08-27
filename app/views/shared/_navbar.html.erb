@@ -25,10 +25,11 @@
       <%= link_to 'Bookings',  bookings_path, class: "nav-link" %>
       </li>
       <% if current_user %>
- <li class="nav-item dropdown">
-      <%= image_tag "adams.jpg",class: "avatar dropdown-toggle", id: "navbarDropdown", data: {toggle: "dropdown"}, aria: {haspopup: "true", expanded: "false"} %>
+        <li class="nav-item dropdown">
+         <%= image_tag "adams.jpg",class: "avatar dropdown-toggle", id: "navbarDropdown", data: {toggle: "dropdown"}, aria: {haspopup: "true", expanded: "false"} %>
       <% else %>
-        <%= link_to 'Sign in to create a listing',  new_user_session_path, class: "btn btn-primary" %>
+        <li class="nav-item dropdown">
+          <%= image_tag "logo1.png",class: "avatar dropdown-toggle", id: "navbarDropdown", data: {toggle: "dropdown"}, aria: {haspopup: "true", expanded: "false"} %>
       <% end %>
 
 

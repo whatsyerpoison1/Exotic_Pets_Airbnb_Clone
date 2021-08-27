@@ -13,11 +13,6 @@
         </button>
       </div>
     <% end %>
-      <% if current_user %>
-        <%= link_to 'Create a pet listing', new_pet_path, class: 'btn btn-success' %>
-      <% else %>
-        <%= link_to 'Sign in to create a listing',  new_user_session_path, class: "btn btn-primary" %>
-      <% end %>
   </div>
 <br><br>
 
